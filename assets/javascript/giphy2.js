@@ -7,7 +7,7 @@ $(document).ready(function() {
 
         var film = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        film + "&api_key=dc6zaTOxFJmzC&limit=10";
+        film + "&api_key=dc6zaTOxFJmzC&limit=18";
 
         // Creating an AJAX call for the specific film button being clicked // 
         $.ajax({
