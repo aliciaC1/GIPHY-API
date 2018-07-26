@@ -16,6 +16,8 @@ $(document).ready(function() {
         }).then(function(response) {
             var results = response.data;
 
+            // deleting previous gifs, so new gifs won't continue to append & only show current button gifs 
+            $('#gif-view').empty();
             // Looping over every result item
             for (var i = 0; i < results.length; i++) {
   
@@ -29,19 +31,21 @@ $(document).ready(function() {
   
                 // Creating a paragraph tag with the result item's rating
                 var p = $("<p class='overlay'>").text("Rating: " + rating);
-  
+
                 // Creating an image tag
-                var filmImage = $("<img  class='imgcontainer' class='gallery'>");
-  
-                // Giving the image tag an src attribute of a proprty pulled off the
-                // result item
-                filmImage.attr("src", results[i].images.fixed_height.url);
+                var  filmImage = $('<img src=' + results[i].images.fixed_height_still.url + 'data-still=' +
+                results[i].images.fixed_height_still.url + ' data-animate=' +
+                results[i].images.fixed_height.url + ' data-state="still" class="filmImage">');
+          
+                // image tag an src attribute and data state of still 
             
-                // Appending the paragraph and personImage we created to the "gifDiv" div we created
+                filmImage.attr("src", results[i].images.fixed_height_still.url);
+            
+                // Appending the paragraph and filmImage we created to the "gifDiv" div we created
                 gifDiv.append(p);
                 gifDiv.append(filmImage);
-  
-                // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+
+                // Prepending the gifDiv to the "#gifs-view" div in the HTML
                 $("#gif-view").prepend(gifDiv);
               }
             }
@@ -53,17 +57,17 @@ $(document).ready(function() {
       // Function for displaying movie data
       function renderButtons() {
 
-        // Deleting the movies prior to adding new movies
+        // Deleting the previous buttons prior to adding new buttons
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
 
-        // Looping through the array of movies
+        // Looping through the array of films
         for (var i = 0; i < films.length; i++) {
 
-          // Then dynamicaly generating buttons for each movie in the array
+          // Then dynamicaly generating buttons for each film in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button type='button' class='btn btn-outline-dark'><br>");
-          // Adding a class of movie-btn to our button
+          // Adding a class of film-btn to our button
           a.addClass("film-btn");
           // Adding a data-attribute
           a.attr("data-name", films[i]);
@@ -74,47 +78,44 @@ $(document).ready(function() {
         }
       }
 
-      // This function handles events where a movie button is clicked
+      // This function handles events where a button is clicked
       $("#add-film").on("click", function(event) {
         event.preventDefault();
         // This line grabs the input from the textbox
         var film = $("#film-input").val().trim();
 
-        // Adding movie from the textbox to our array
+        // Adding film from the textbox to our array
         films.push(film);
 
-        // Calling renderButtons which handles the processing of our movie array
+        // Calling renderButtons which handles the processing of film array
         renderButtons();
       });
 
-      // Adding a click event listener to all elements with a class of "movie-btn"
+      // Displays gifs on click film btns 
       $(document).on("click", ".film-btn", displayFilmGif);
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
 
-      // function imageMove() {
-      //   //Sets state to be the data in state for the images
-      //   var state = $(this).attr('data-state');
+      //function to animate gifs on click 
+      function imgAnimate() {
+        //Sets state to be the data in state for the images
+        var state = $(this).attr('data-state');
     
-      //   //Switches the source to the animate/still state depending on what it is currently at
-      //     if(state == 'still') {
-      //           $(this).attr('src', $(this).data('animate'));
-      //           $(this).attr('data-state', 'animate');
-      //       }
-      //       else {
-      //           $(this).attr('src', $(this).data('still'));
-      //           $(this).attr('data-state', 'still');
-      //       }
-      // }
+        //Switches the source to the animate/still state depending on what it is currently at
+          if(state == 'still') {
+                $(this).attr('src', $(this).data('animate'));
+                $(this).attr('data-state', 'animate');
+            }
+            else {
+                $(this).attr('src', $(this).data('still'));
+                $(this).attr('data-state', 'still');
+            }
+      }
     
-      // //Runs the onClickEmotions if the emotion buttons are clicked
-      // $(document).on('click', '.item', onClickItems);
-      // //Runs the imageMove function if the images are clicked
-      // $(document).on('click', '.itemImage', imageMove);
-    
-      //Sets up the buttons and form when the page loads
-  
-    
+      
+      //Runs the imgAnimate function if the images are clicked
+      $(document).on('click', '.filmImage', imgAnimate);
+       
  
 });
