@@ -1,13 +1,6 @@
 body{
     font-family: 'Poppins', sans-serif;
-    /* font-family: 'Raleway', sans-serif;
-    font-family: 'Arimo', sans-serif; */
     margin: auto;
-    /* background-image: url("../images/ghibli.jpg");
-    background-repeat: no-repeat;
-    background-size: 64%;
-    background-position: 58% 0%; */
-   
 }
 
 .main-container{
@@ -16,7 +9,6 @@ body{
 .sidebar{
     margin-right: 53px;
     border-right: 1px solid black;
-
 }
 button{
     font-family: 'Poppins', sans-serif;
@@ -36,6 +28,10 @@ img.img-head{
     border-top: 1px solid black;
     padding: 10px;
 }
+.btn{
+    width: 100%;
+    white-space: normal;
+}
 
 img.btn{
     width: 86px;
@@ -46,10 +42,6 @@ img.btn{
 .btn-primary:hover{
     background-color: #d8e6f5;
 }
-/* 
-.btn-primary.collapsed:focus {
-    background-color: yellow;
-} */
 
 img.icon{
     width: 86px;
@@ -75,53 +67,42 @@ form{
     margin: auto;
     margin-top: 10px;
     float: right;
+    width: 100%;
 }
 
+input{
+    width: 100%;
+    text-align: center;
+}
 #add-film{
     margin: auto;
     margin-top: 10px;
     font-family: 'Poppins', sans-serif;
     float: right;
 }
-/* .grid {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 150px;
-    grid-auto-flow: row dense;
-  } */
 
-  /* .gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%; } */
-
-    #collapseExample13{
-        margin-left: -60px;
-        width: 839px;
+#collapseExample13{
+    margin-left: -6%;
+    width: 100%;
     }
-#collapseExample13.collapse.show{
-    margin-left: -60px;
-    width: 839px;
-}
+#collapseExample13.collapse.show {
+    margin-left: -6%;
+    width: 100%;
+    }
 
-hr{
-    
-    margin-left: -61px;
+hr{    
+    margin-left: -6%;
     font-weight: 10px;
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
     border-top: 2px solid rgba(0,0,0,.1);
-    width: 839px;
+    width: 100%;
 }
+
 .grid{
-    margin-right: 48px;
-    margin-left: -59px;
-    margin-top: 10px;
+    margin-right: 6%;
+    margin-left: -6%;
     line-height: 0;
     -webkit-column-count: 3;
     -webkit-column-gap:   10px;
@@ -140,11 +121,7 @@ hr{
   }
 
   p {
-    /* margin-top: 166px; */
     margin-left: 0px;
-    /* margin-bottom: 39rem; */
-    /* position: absolute;
-    z-index: 3; */
 }
 
 p.overlay {
@@ -153,11 +130,9 @@ p.overlay {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    width: 20%;
     transition: .5s ease;
     opacity: 0;
     color: white;
-    font-size: 20px;
     padding: 20px;
     text-align: left;
     position: fixed;
@@ -169,6 +144,12 @@ p.overlay {
   .item:hover .overlay {
     opacity: 1;
   }
+
+a {
+    color:#007bffb5;
+    text-decoration: none;
+    background-color: transparent;
+}
 
 /* playing around with image formating /// 
     /* .grid { 
