@@ -10,7 +10,7 @@
   > - You can add additional Studio Ghibli films that are not already listed by inputing a new  film title and clicking "Add Another Film".
   > - Activiate gif animations by clicking on gifs. 
   > - Gif rating will be displayed at bottom of the page when hovering over the gif. 
-  > - Select gifs to save to your favorites, which can be accessed through the favorites toggle button. 
+        ![Ghibli Facts](./assets/images/ghibliwork.gif)
 
 ### Built With : 
 > - HTML 
@@ -21,6 +21,8 @@
 
 ### Future Enhancements: 
 > - Enable user to select gifs to download and save to their local computer. 
+> - Select gifs to save to user's favorites, which can be accessed through the favorites toggle button. 
+
 
 ***Take no credit for Studio Ghibli artwork , icons, images. Pulled from other resources***
 
