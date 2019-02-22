@@ -1,5 +1,5 @@
 # Studio Ghibli GIPHY-API
-![Ghibli landing page](./assets/images/ghiblilandingpg.gif)
+![Ghibli landing page](./assets/images/ghiblifront.gif)
 [View Ghibli Giphy](https://aliciac1.github.io/Ghibli-API/)
 
 ### Concept: 
@@ -10,7 +10,7 @@
   > - You can add additional Studio Ghibli films that are not already listed by inputing a new  film title and clicking "Add Another Film".
   > - Activiate gif animations by clicking on gifs. 
   > - Gif rating will be displayed at bottom of the page when hovering over the gif. 
-        ![Ghibli Facts](./assets/images/ghibliwork.gif)
+        ![Ghibli Facts](./assets/images/ghibliworking.gif)
 
 ### Built With : 
 > - HTML 
